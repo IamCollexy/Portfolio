@@ -10,6 +10,7 @@ import LoginPage from './pages/Crud&Authentication/LoginPage';
 import AdminDashboardPage from './pages/Crud&Authentication/AdminDashboardPage';
 import UserDashboardPage from './pages/Crud&Authentication/UserDashboardPage';
 import PrivateRoute from './components/Portfolio/Crud/Authentication/Routes/PrivateRoute';
+import SignupPage from './components/Portfolio/Crud/Authentication/Signup';
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
           path="/portfolio/payment"
           element={<PaystackPayment />}
         />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/crudApp-login" element={<LoginPage />} />
+        <Route path="/crudApp-signup" element={<SignupPage />} />
         <Route
           path="/admin-dashboard"
           element={

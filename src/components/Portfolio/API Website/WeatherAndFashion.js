@@ -13,8 +13,8 @@ const StyledStack = styled(Stack)({
 // Call the OpenWeatherMap API to get the current weather information
 const apiKey = '55346314d85095238defdeee438085aa';
 const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
-console.log(apiKey);
-console.log(fashionApiKey);
+// console.log(apiKey);
+// console.log(fashionApiKey);
 function WeatherAndFashion() {
   const [weather, setWeather] = useState({});
   const [fashion, setFashion] = useState([]);
@@ -25,7 +25,7 @@ function WeatherAndFashion() {
       const longitude = position.coords.longitude;
 
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
-      console.log(weatherUrl);
+      // console.log(weatherUrl);
       // Get the current weather information
       axios
         .get(weatherUrl)
@@ -54,7 +54,7 @@ function WeatherAndFashion() {
       axios
         .get(fashionUrl)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           const fashion = response.data;
 
           // Update state with fashion trends
@@ -64,7 +64,7 @@ function WeatherAndFashion() {
     }
 
     function error(error) {
-      console.log(error);
+      // console.log(error);
     }
 
     // Get the user's location
