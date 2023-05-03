@@ -1,19 +1,21 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import Hero from './Hero';
-import HomeNav from './HomeNav';
-import ServiceSection from './PortfolioSection';
-import Pricing from './Pricing';
+
+import AboutMe from './AboutMe';
+
+import Skills from './Skills';
+import Experience from './Experience';
+import MyPortfolio from './MyPortfolio';
 const Home = () => {
   return (
     <Box>
-      <HomeNav />
       <Hero />
-      <AboutUs />
-      <ServiceSection />
-      <Pricing />
+      <AboutMe />
+      <Skills />
+      <Experience />
+      <MyPortfolio />
       <ContactUs />
     </Box>
   );

@@ -21,9 +21,11 @@ const ContactUs = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        bgcolor: '#2C1B47',
+        padding: '30px 10px',
       }}
     >
-      <Typography variant="h5" fontWeight={600}>
+      <Typography variant="h5" fontWeight={600} color={'white'}>
         Get in Touch
       </Typography>
       <Stack
@@ -44,12 +46,19 @@ const ContactUs = () => {
             label="Email"
             variant="outlined"
             placeholder="example@email.com"
-            sx={{ minWidth: { md: 200 } }}
+            sx={{
+              minWidth: { md: 200 },
+              backgroundColor: 'white',
+              backgroundColor: 'white',
+              borderRadius: '5px',
+            }}
           />
         </FormControl>
         <FormControl
           sx={{
             minWidth: { xs: 100, md: 200 },
+            backgroundColor: 'white',
+            borderRadius: '5px',
           }}
         >
           <InputLabel id="demo-simple-select-label">Plan</InputLabel>

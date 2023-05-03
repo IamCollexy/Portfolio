@@ -1,36 +1,50 @@
 import * as React from 'react';
-
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Stack,
+  Toolbar,
+  Typography,
+  styled,
+} from '@mui/material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Portfolio', 'Services'];
+const navItems = ['About', 'Portfolio', 'Contact Me'];
 
 function App(props) {
   const { window } = props;
 
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const [mobileOpen, setMobileOpen] = useState(false);
+  // Toggle Open and closing of the drawer
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  // For the Drawer Menu
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box
+      sx={{
+        textAlign: 'center',
+      }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
-        CDG Portfolio
+        Frontend Developer
       </Typography>
       <Divider />
       <List>
@@ -45,30 +59,60 @@ function App(props) {
     </Box>
   );
 
+  // For nav links
+
+  const ColoredLinks = styled(Link)({
+    color: '#CDA9FF',
+    textDecoration: 'none',
+    fontSize: { xs: '14px', md: '24px' },
+  });
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box>
+    <>
       <CssBaseline />
       <AppBar
         component="nav"
+        position="static"
         sx={{
-          position: 'static',
-          bgcolor: '#761AEA',
+          bgcolor: 'transparent',
         }}
       >
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
+          <Box
             sx={{
-              flexGrow: 1,
-              //   display: { xs: 'block', sm: 'block' },
+              display: 'flex',
+              justifyContent: 'space-between',
+
+              width: '100%',
+              alignItems: 'center',
             }}
           >
-            CDG Portfolio
-          </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: '#FFFFFF',
+                fontSize: { xs: '16px', md: '24px' },
+              }}
+            >
+              Frontend Developer
+            </Typography>
+            <Stack spacing={2} direction={'row'}>
+              {navItems.map((item) => (
+                <Box
+                  key={item}
+                  sx={{
+                    display: { xs: 'none', sm: 'flex' },
+                  }}
+                >
+                  <ColoredLinks to={'#'}>{item}</ColoredLinks>
+                </Box>
+              ))}
+            </Stack>
+          </Box>
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -77,23 +121,12 @@ function App(props) {
             sx={{
               mr: 2,
               display: { sm: 'none' },
-              marginLeft: 'auto', // add this to move the MenuIcon to the right
+              marginLeft: 'auto',
+              // add this to move the MenuIcon to the right
             }}
           >
-            <MenuIcon />
+            <MenuIcon style={{ color: 'white' }} />
           </IconButton>
-
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'block' },
-            }}
-          >
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -119,10 +152,7 @@ function App(props) {
           {drawer}
         </Drawer>
       </Box>
-      {/* <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box> */}
-    </Box>
+    </>
   );
 }
 

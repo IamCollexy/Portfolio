@@ -27,6 +27,7 @@ function WeatherAndFashion() {
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
       // console.log(weatherUrl);
       // Get the current weather information
+
       axios
         .get(weatherUrl)
         .then((res) => {
