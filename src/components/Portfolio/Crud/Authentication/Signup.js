@@ -36,7 +36,7 @@ const Signup = () => {
   return (
     <div
       style={{
-        backgroundColor: 'red',
+        backgroundColor: '#2C1B47',
         minHeight: '100vh',
         display: 'flex',
 

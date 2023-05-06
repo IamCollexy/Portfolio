@@ -19,7 +19,8 @@ const AboutMe = () => {
     <Box
       sx={{
         bgcolor: '#DCCAE9',
-        padding: '20px 10px',
+        padding: '50px 10px',
+        pb: '100px',
       }}
     >
       <Box

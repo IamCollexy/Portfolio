@@ -14,61 +14,41 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ApiIcon from '@mui/icons-material/Api';
+import MovieIcon from '@mui/icons-material/Movie';
 
-import CodeIcon from '@mui/icons-material/Code';
-import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import { Link } from 'react-router-dom';
 const data = [
   {
     id: 1,
-    title: 'Web Design',
-    text: 'At CDG web design brand, we create modern and attractive websites that help businesses stand out online. Our team of designers will work closely with you to ensure that your website reflects your brand and meets your business goals.',
+    title: 'API-based application',
+    text: 'API-based applications use external APIs to perform tasks and functions by leveraging pre-defined methods to access and interact with data or services. A weather app is an example of an API-based application that fetches real-time weather data from an external weather API and displays it in various formats. Click the button below to see my API-based application project.',
     icon: (
-      <CodeIcon
-        sx={{
+      <ApiIcon
+        style={{
           alignSelf: 'center',
+          color: '#724C9D',
         }}
         fontSize="large"
       />
     ),
+    link: '/updates',
   },
+
   {
     id: 2,
-    title: 'E-commerce',
-    text: "We specialize in building custom e-commerce websites that are optimized for online sales. Whether you're starting a new online store or looking to improve an existing one, our team of developers and designers can help you achieve your sales targets.",
+    title: 'Movie Management System',
+    text: 'A CRUD app is a software application that provides basic functionality to Create, Read, Update, and Delete data. These applications are designed to facilitate the management of data in a database, enabling users to add, view, edit, and remove records as needed.',
     icon: (
-      <HomeRepairServiceIcon
-        sx={{
+      <MovieIcon
+        style={{
           alignSelf: 'center',
+          color: '#724C9D',
         }}
         fontSize="large"
       />
     ),
-  },
-  {
-    id: 3,
-    title: 'Digital Marketing',
-    text: 'Our digital marketing services are designed to help businesses grow their online presence and reach new customers. From SEO and PPC to social media and email marketing, we offer a range of services to help you achieve your digital marketing goals.',
-    icon: (
-      <HomeRepairServiceIcon
-        sx={{
-          alignSelf: 'center',
-        }}
-        fontSize="large"
-      />
-    ),
-  },
-  {
-    id: 4,
-    title: 'Search Engine Optimization',
-    text: 'We can help your website rank higher on search engines like Google through our proven SEO strategies. Our team of experts will conduct a thorough analysis of your website and create a custom SEO plan to improve your rankings and drive more traffic to your site.',
-    icon: (
-      <HomeRepairServiceIcon
-        sx={{
-          alignSelf: 'center',
-        }}
-        fontSize="large"
-      />
-    ),
+    link: '/crudApp-signup',
   },
 ];
 
@@ -83,7 +63,7 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
       onClick={() => onClick()}
       sx={{
         position: 'absolute',
-        right: { xs: '-5px', sm: '20px', md: '50px', lg: '300px' },
+        right: { xs: '-5px', sm: '20px', md: '50px', lg: '100px' },
       }}
     >
       <ArrowForwardIosIcon
@@ -108,7 +88,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
       onClick={() => onClick()}
       sx={{
         position: 'absolute',
-        left: { xs: '-5px', sm: '20px', md: '50px', lg: '300px' },
+        left: { xs: '-5px', sm: '20px', md: '50px', lg: '100px' },
       }}
     >
       <ArrowBackIosIcon
@@ -145,6 +125,7 @@ const MyPortfolio = () => {
             variant="h6"
             fontSize={'56px'}
             fontWeight={'bold'}
+            color={'#212851'}
           >
             My Portfolio
           </Typography>
@@ -204,6 +185,7 @@ const MyPortfolio = () => {
               boxShadow: '0 4px 8px 0 rgb(0 0 0 / 10%)',
               border: '.1px solid #f5f5f5',
               borderRadius: '10px',
+              bgcolor: '#FFFFFF',
             }}
             key={item.id}
           >
@@ -219,7 +201,7 @@ const MyPortfolio = () => {
                   width: '100px',
                   alignSelf: 'center',
                   py: '10px',
-                  backgroundColor: 'orange',
+                  backgroundColor: '#DCCAE9',
                   display: 'flex',
                   justifyContent: 'center',
                   borderRadius: '5px',
@@ -228,6 +210,9 @@ const MyPortfolio = () => {
                 {item.icon}
               </Box>
               <h2>{item.title}</h2>
+              <Typography fontWeight={'bold'} variant="caption">
+                {item.text}
+              </Typography>
             </CardContent>
             {/* <CardMedia
               component="img"
@@ -240,18 +225,20 @@ const MyPortfolio = () => {
                 alignItems: 'center',
               }}
             >
-              <Button
-                variant="outlined"
-                sx={{
-                  width: '200px',
-                  textAlign: 'center',
+              <Link to={item.link}>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    width: '200px',
+                    textAlign: 'center',
 
-                  color: '#761AEA',
-                  borderRadius: '50px',
-                }}
-              >
-                Learn More
-              </Button>
+                    color: '#761AEA',
+                    borderRadius: '50px',
+                  }}
+                >
+                  Browse
+                </Button>
+              </Link>
             </CardActions>
           </Card>
         ))}

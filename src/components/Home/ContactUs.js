@@ -12,7 +12,9 @@ import {
   Link,
 } from '@mui/material';
 import React from 'react';
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
 const ContactUs = () => {
   return (
     <Box
@@ -49,7 +51,7 @@ const ContactUs = () => {
             sx={{
               minWidth: { md: 200 },
               backgroundColor: 'white',
-              backgroundColor: 'white',
+              color: 'white',
               borderRadius: '5px',
             }}
           />
@@ -58,6 +60,7 @@ const ContactUs = () => {
           sx={{
             minWidth: { xs: 100, md: 200 },
             backgroundColor: 'white',
+            color: 'white',
             borderRadius: '5px',
           }}
         >
@@ -79,7 +82,7 @@ const ContactUs = () => {
         </FormControl>
       </Stack>
       <FormControl>
-        <FormLabel>Message</FormLabel>
+        <FormLabel sx={{ color: 'white' }}>Message</FormLabel>
         <textarea
           style={{
             width: '250px',
@@ -102,12 +105,14 @@ const ContactUs = () => {
       </Button>
       <Stack spacing={4} direction={'row'}>
         <Link href="https://www.linkedin.com/in/collins-ikpeme-40bb7b213/">
-          LinkedIn
+          <LinkedInIcon style={{ color: '#CDA9FF' }} />
         </Link>
         <Link href="https://mail.google.com/mail/u/0/#inbox">
-          Email
+          <EmailIcon style={{ color: '#CDA9FF' }} />
         </Link>
-        <Link href="https://github.com/IamCollexy">Github</Link>
+        <Link href="https://github.com/IamCollexy">
+          <GitHubIcon style={{ color: '#CDA9FF' }} />
+        </Link>
       </Stack>
     </Box>
   );

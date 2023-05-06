@@ -1,6 +1,6 @@
 import { Box, Card, CardHeader, Typography } from '@mui/material';
 import React from 'react';
-import theme from '../../theme';
+// import theme from '../../theme';
 const Experience = () => {
   return (
     <>
@@ -8,6 +8,7 @@ const Experience = () => {
         sx={{
           bgcolor: 'white',
           padding: '30px',
+          py: '70px',
         }}
       >
         <Typography

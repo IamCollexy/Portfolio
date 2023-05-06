@@ -5,11 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 // import dotenv from 'dotenv';
 // dotenv.config();
-const StyledStack = styled(Stack)({
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '100%',
-});
+
 // Call the OpenWeatherMap API to get the current weather information
 const apiKey = '55346314d85095238defdeee438085aa';
 const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
@@ -97,10 +93,11 @@ function WeatherAndFashion() {
   return (
     <>
       {weather && (
-        <StyledStack
+        <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={2}
           my="20px"
+          mx="20px"
         >
           <h4>Country:</h4>
           <p>{weather.locationCountry}</p>
@@ -109,10 +106,10 @@ function WeatherAndFashion() {
           <h4>Humidity:</h4>
           <p>{weather.humidity}%</p>
           <h4>Temperature:</h4>
-          <p>{weather.temperature}&#8451;</p>
+          <p>{weather.temperature}</p>
           <h4>Wind Speed:</h4>
           <p>{weather.windSpeed} m/s</p>
-        </StyledStack>
+        </Stack>
       )}
       {fashion.length > 0 ? (
         <Carousel
