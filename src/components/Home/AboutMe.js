@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 const AboutMe = () => {
   return (
     <Box
+    id="aboutme"
       sx={{
         bgcolor: '#DCCAE9',
         padding: '50px 10px',
