@@ -36,7 +36,7 @@ const Experience = () => {
         >
           <CardHeader
             title={'IHIFIX'}
-            subheader={'Nov(2022) - May(2023)'}
+            subheader={'Nov(2022) - Oct(2023)'}
             sx={{
               color: '#212851',
             }}
@@ -50,17 +50,52 @@ const Experience = () => {
               fontWeight: 'bold',
             }}
           >
-            Frontend Developer @ IHIFIX Kaduna North, Kaduna State,
-            Nigeria · On-site
+            Frontend Developer @ IHIFIX, Kaduna State, Nigeria ·
+            On-site
           </Typography>
-          <Typography variant="caption">
-            I am currently a UI developer at Ihifix, where I have been
-            working for the past 6 months. My work includes building
-            user interfaces using React, JavaScript, and Material UI
-            for the company's clients, as well as contributing to the
-            development of a learning management system called Ubefu.
-            Additionally, I serve as a mentor and trainer for upcoming
-            developers within the company.
+          <Typography variant="body2">
+            Worked as a frontend developer at Ihifix, My work includes
+            building user interfaces using Next Js, and Material UI
+            for the company, I contributed to many projects including
+            a learning management system called Ubefu. Additionally, I
+            serve as a mentor and trainer for upcoming developers
+            within the company.
+          </Typography>
+        </Card>
+      </Box>
+      <Box
+        sx={{
+          bgcolor: 'white',
+          padding: '30px',
+          py: '20px',
+        }}
+      >
+        <Card
+          sx={{
+            textAlign: 'center',
+            padding: '50px',
+          }}
+        >
+          <CardHeader
+            title={'UPTITEK'}
+            subheader={'Nov(2023) - Present'}
+            sx={{
+              color: '#212851',
+            }}
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              width: { xs: '80%', md: '50%' },
+              margin: 'auto',
+              color: '#2C1B47',
+              fontWeight: 'bold',
+            }}
+          >
+            Junior Developer @ Uptitek ltd· Remote
+          </Typography>
+          <Typography variant="body2">
+            Worked on ..................
           </Typography>
         </Card>
       </Box>

@@ -14,41 +14,23 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ApiIcon from '@mui/icons-material/Api';
-import MovieIcon from '@mui/icons-material/Movie';
 
 import { Link } from 'react-router-dom';
 const data = [
   {
     id: 1,
-    title: 'API-based application',
-    text: 'API-based applications use external APIs to perform tasks and functions by leveraging pre-defined methods to access and interact with data or services. A weather app is an example of an API-based application that fetches real-time weather data from an external weather API and displays it in various formats. Click the button below to see my API-based application project.',
-    icon: (
-      <ApiIcon
-        style={{
-          alignSelf: 'center',
-          color: '#724C9D',
-        }}
-        fontSize="large"
-      />
-    ),
-    link: '/updates',
+    title: "HETTIE's SHOP",
+    text: 'This is a fullstack Ecommerce application,  built using NEXT js on the client-side and node js on the server',
+    image: '/Images/ecommerceMockup.png',
+    link: 'https://hettie-ecommerce-frontend.vercel.app/',
   },
 
   {
     id: 2,
-    title: 'Movie Management System',
-    text: 'A CRUD app is a software application that provides basic functionality to Create, Read, Update, and Delete data. These applications are designed to facilitate the management of data in a database, enabling users to add, view, edit, and remove records as needed.',
-    icon: (
-      <MovieIcon
-        style={{
-          alignSelf: 'center',
-          color: '#724C9D',
-        }}
-        fontSize="large"
-      />
-    ),
-    link: '/crudApp-signup',
+    title: 'DELIVERY SERVICES',
+    text: 'This is a frontend delivery service app, it involves assigning sales delivery, pickup and delivery',
+    image: '/Images/deliveryAppMockup.png',
+    link: 'https://do-for-me.vercel.app/',
   },
 ];
 
@@ -106,6 +88,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 const MyPortfolio = () => {
   return (
     <Box
+      id="myWorks"
       sx={{
         py: '30px',
       }}
@@ -116,22 +99,25 @@ const MyPortfolio = () => {
           my: '20px',
         }}
       >
+        <Typography
+          variant="h3"
+          color={'black'}
+          fontWeight={'bold'}
+          textAlign={'center'}
+          fontSize={'56px'}
+        >
+          My Portfolio
+        </Typography>
         <Box
           sx={{
             textAlign: 'center',
+            width: '80%',
+            m: 'auto',
           }}
         >
-          <Typography
-            variant="h6"
-            fontSize={'56px'}
-            fontWeight={'bold'}
-            color={'#212851'}
-          >
-            My Portfolio
-          </Typography>
           <Typography variant="caption" fontWeight={'bold'}>
-            I specialize in UI design and web developement, I have
-            created quite a number of web UIs.
+            I specialize in building responsive UI, functional and
+            scalable website applications.
           </Typography>
         </Box>
       </Box>
@@ -196,21 +182,17 @@ const MyPortfolio = () => {
                 flexDirection: 'column',
               }}
             >
-              <Box
-                sx={{
-                  width: '100px',
-                  alignSelf: 'center',
-                  py: '10px',
-                  backgroundColor: '#DCCAE9',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  borderRadius: '5px',
-                }}
-              >
-                {item.icon}
-              </Box>
+              <CardMedia
+                component="img"
+                alt="Collins"
+                image={item.image}
+              />
               <h2>{item.title}</h2>
-              <Typography fontWeight={'bold'} variant="caption">
+              <Typography
+                fontWeight={'bold'}
+                color="gray"
+                variant="caption"
+              >
                 {item.text}
               </Typography>
             </CardContent>
@@ -225,7 +207,7 @@ const MyPortfolio = () => {
                 alignItems: 'center',
               }}
             >
-              <Link to={item.link}>
+              <Link target="_blank" to={item.link}>
                 <Button
                   variant="outlined"
                   sx={{

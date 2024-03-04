@@ -10,6 +10,7 @@ import UserDashboardPage from './pages/Crud&Authentication/UserDashboardPage';
 import PrivateRoute from './components/Portfolio/Crud/Authentication/Routes/PrivateRoute';
 import SignupPage from './components/Portfolio/Crud/Authentication/Signup';
 import ApiApp from './pages/ConnectToApi/ApiApp';
+import MyWorks from './pages/myWorks';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/updates" element={<ApiApp />} />
+        <Route path="/myWorks" element={<MyWorks />} />
         <Route
           path="/user-dashboard/payment"
           element={<PaystackPayment />}

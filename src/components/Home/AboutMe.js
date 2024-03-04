@@ -6,9 +6,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Divider,
   Grid,
-  Stack,
   Typography,
 } from '@mui/material';
 import React from 'react';
@@ -63,7 +61,7 @@ const AboutMe = () => {
             sx={{
               borderRadius: '50px',
               width: 480,
-              height: 630,
+              height: 480,
             }}
           >
             <CardMedia
@@ -81,8 +79,8 @@ const AboutMe = () => {
 
               alignSelf: 'center',
               margin: 'auto',
-              height: { md: 'auto', lg: '100%' },
-
+              width: '95%',
+              m: 'auto',
               borderRadius: '10px',
             }}
           >
@@ -94,34 +92,28 @@ const AboutMe = () => {
                 }}
                 title="Collins Ikpeme "
                 component="Paper"
-                subheader="Read to know more about me."
+                subheader="website developer"
               />
 
               <Typography
                 variant="body2"
                 sx={{
-                  textAlign: 'center',
+                  textAlign: 'start',
                   lineHeight: '40px ',
                   fontSize: '16px',
                   fontWeight: '500',
                   color: '#2C1B47',
                 }}
               >
-                Collins Ikpeme is a frontend developer from Cross
-                River State, Nigeria. He graduated from Bells
-                University of Technology with a degree in Electrical
-                and Electronics Engineering, but his interest in
-                coding led him to pursue frontend development as a
-                career. Collins has one year of experience building
-                web UIs and implementing logics with JavaScript. His
-                favorite frontend technologies and tools include
-                React.js, Next.js, Material UI, HTML, CSS, and
-                Firebase. When he's not coding, Collins enjoys music,
-                making beats, hanging out with friends, working out,
-                and going to concerts. He aspires to land a
-                high-paying job, work remotely, travel for conferences
-                on frontend development, do some freelancing, and
-                provide solutions to big companies.
+                Collins Ikpeme is a website developer his developer
+                technologies include React.js, Next.js, Material UI,
+                HTML, CSS, and MongoDb. When he's not coding, Collins
+                enjoys music, making beats, hanging out with friends.
+                <br />
+                <b>Interest:</b>
+                <br />
+                high-paying job, work remotely, travel, freelancing,
+                and providing solutions to companies.
               </Typography>
             </CardContent>
 

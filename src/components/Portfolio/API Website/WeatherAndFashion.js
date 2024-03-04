@@ -1,4 +1,12 @@
-import { styled, Stack } from '@mui/material';
+import {
+  styled,
+  Stack,
+  Box,
+  Grid,
+  Typography,
+  CardMedia,
+  Card,
+} from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Carousel from 'react-multi-carousel';
@@ -14,7 +22,7 @@ const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
 function WeatherAndFashion() {
   const [weather, setWeather] = useState({});
   const [fashion, setFashion] = useState([]);
-
+  console.log(weather);
   useEffect(() => {
     function success(position) {
       const latitude = position.coords.latitude;
@@ -45,6 +53,7 @@ function WeatherAndFashion() {
         })
         .catch((error) => console.log(error));
 
+      // 2
       const fashionUrl = `https://api.unsplash.com/photos/?client_id=${fashionApiKey}`;
 
       // Get the latest fashion trends
@@ -67,6 +76,8 @@ function WeatherAndFashion() {
     // Get the user's location
     navigator.geolocation.getCurrentPosition(success, error);
   }, []);
+
+  // Carorusel Responsiveness
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -91,59 +102,72 @@ function WeatherAndFashion() {
   };
 
   return (
-    <>
-      {weather && (
-        <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={2}
-          my="20px"
-          mx="20px"
-        >
-          <h4>Country:</h4>
-          <p>{weather.locationCountry}</p>
-          <h4>State:</h4>
-          <p>{weather.locationState}</p>
-          <h4>Humidity:</h4>
-          <p>{weather.humidity}%</p>
-          <h4>Temperature:</h4>
-          <p>{weather.temperature}</p>
-          <h4>Wind Speed:</h4>
-          <p>{weather.windSpeed} m/s</p>
-        </Stack>
-      )}
-      {fashion.length > 0 ? (
-        <Carousel
-          responsive={responsive}
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={3000}
-          removeArrowOnDeviceType={['tablet', 'mobile', 'desktop']}
-        >
-          {fashion.map((item) => (
-            <div
-              style={{
-                textAlign: 'center',
-              }}
-              key={item.id}
-            >
-              <img
-                style={{ borderRadius: '5px' }}
-                src={item.urls.small_s3}
-                alt="updates"
-              />
-              <div>
-                <h3>{item.alt_description}</h3>
-                <p>Updated at: {item.updated_at}</p>
-                <p>Promoted at: {item.promoted_at}</p>
-                {/* <p>Width: {item.width}</p> */}
-              </div>
-            </div>
-          ))}
-        </Carousel>
-      ) : (
-        <p>No fashion data available</p>
-      )}
-    </>
+    <Box
+      sx={{
+        bgcolor: '#DCCAE9',
+      }}
+    >
+      <Grid
+        container
+        sx={{
+          padding: '20px',
+          alignItems: 'center',
+        }}
+      >
+        <Grid item xs={6}>
+          <Typography
+            variant="body1"
+            sx={{
+              color: 'rgba(147, 86, 160, 1)',
+              fontWeight: 'bold',
+              fontSize: {
+                xs: '12px',
+                sm: '16px',
+                md: '20px',
+                lg: '30px',
+              },
+            }}
+          >
+            Discover the perfect outfit for every weather condition!
+            This page showcases my ability to connect with APIs,
+            retrieve real-time weather data, and integrate dynamic
+            fashion recommendations based on your location. Explore
+            and stay fashion-forward while staying weather-ready!
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Card
+            sx={{
+              borderRadius: { xs: 2, md: 5, lg: 10 },
+            }}
+          >
+            <CardMedia
+              component={'img'}
+              image={'/images/HeroWeather&Fashion.svg'}
+            />
+          </Card>
+        </Grid>
+        <Box>
+          <Typography variant="h6">Weather:</Typography>
+          <Stack direction={'row'} spacing={2}>
+            {weather &&
+              weather.map((data) => (
+                <Box key={data.id}>
+                  <Typography variant="subtitle1">
+                    {data.name}
+                  </Typography>
+                  <Typography variant="body1">
+                    Temperature: {data.temperature} &#8451;
+                  </Typography>
+                  <Typography variant="body1">
+                    Humidity: {data.humidity} %
+                  </Typography>
+                </Box>
+              ))}
+          </Stack>
+        </Box>
+      </Grid>
+    </Box>
   );
 }
 

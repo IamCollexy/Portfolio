@@ -29,29 +29,6 @@ const Hero = () => {
       }}
     >
       <HomeNav />
-      {/* <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: { xs: '20px 10px', md: '20px 128px' },
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{
-            color: '#FFFFFF',
-            fontSize: { xs: '16px', md: '24px' },
-          }}
-        >
-          Frontend Developer
-        </Typography>
-        <Stack spacing={2} direction={'row'}>
-          <ColoredLinks href="#">About</ColoredLinks>
-          <ColoredLinks href="#">Portfolio</ColoredLinks>
-          <ColoredLinks href="#">Contact</ColoredLinks>
-        </Stack>
-      </Box> */}
 
       <Grid
         container
@@ -104,47 +81,57 @@ const Hero = () => {
                 spacing={3}
                 alignItems={'center'}
               >
-                <LinkedInIcon
-                  fontSize="large"
-                  style={{
-                    color: '#CDA9FF',
-                  }}
-                />
-                <TwitterIcon
-                  fontSize="large"
-                  style={{
-                    color: '#CDA9FF',
-                  }}
-                />
-                <FacebookIcon
-                  fontSize="large"
-                  style={{
-                    color: '#CDA9FF',
-                  }}
-                />
-                <GitHubIcon
-                  fontSize="large"
-                  style={{
-                    color: '#CDA9FF',
-                  }}
-                />
+                <Link href="#">
+                  <LinkedInIcon
+                    fontSize="large"
+                    style={{
+                      color: '#CDA9FF',
+                    }}
+                  />
+                </Link>
+                <Link href="#">
+                  <TwitterIcon
+                    fontSize="large"
+                    style={{
+                      color: '#CDA9FF',
+                    }}
+                  />
+                </Link>
+                <Link href="#">
+                  <FacebookIcon
+                    fontSize="large"
+                    style={{
+                      color: '#CDA9FF',
+                    }}
+                  />
+                </Link>
+                <Link href="#">
+                  <GitHubIcon
+                    fontSize="large"
+                    style={{
+                      color: '#CDA9FF',
+                    }}
+                  />
+                </Link>
               </Stack>
             </Box>
-            <Button
-              variant="contained"
-              sx={{
-                borderRadius: '50px',
-                padding: '10px 25px ',
-                lineHeight: '24px',
-                textTransform: 'none',
-                fontSize: '20px',
-                bgcolor: '#6A2CBE',
-                marginTop: '30px',
-              }}
-              endIcon={<WorkIcon />}
-            >
-              My Work
-            </Button>
+            <Link href="#myWorks">
+              <Button
+                variant="contained"
+                sx={{
+                  borderRadius: '50px',
+                  padding: '10px 25px ',
+                  lineHeight: '24px',
+                  textTransform: 'none',
+                  fontSize: '20px',
+                  bgcolor: '#6A2CBE',
+                  marginTop: '30px',
+                }}
+                endIcon={<WorkIcon />}
+              >
+                My Work
+              </Button>
+            </Link>
           </Box>
         </Grid>
         <Grid

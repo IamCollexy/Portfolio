@@ -44,7 +44,7 @@ function App(props) {
       }}
     >
       <Typography variant="h6" sx={{ my: 2 }}>
-        Frontend Developer
+        Website Developer
       </Typography>
       <Divider />
       <List>
@@ -85,8 +85,8 @@ function App(props) {
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
-
-              width: '100%',
+              margin: 'auto',
+              width: '95%',
               alignItems: 'center',
             }}
           >
@@ -97,7 +97,7 @@ function App(props) {
                 fontSize: { xs: '16px', md: '24px' },
               }}
             >
-              Frontend Developer
+              Website Developer
             </Typography>
             <Stack spacing={2} direction={'row'}>
               {navItems.map((item) => (

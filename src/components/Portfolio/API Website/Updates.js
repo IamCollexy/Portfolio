@@ -73,28 +73,29 @@ function ApiBased() {
   return (
     <Box
       sx={{
-        bgcolor: '#D1BBB7',
-        padding: '50px 10px',
+        bgcolor: '#DCCAE9',
       }}
     >
       <Box
-      // sx={{
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      // }}
+        sx={{
+          py: '20px',
+        }}
       >
         <Typography
           sx={{
             fontWeight: 'bold',
             textAlign: 'center',
-            color: '#763528',
+            color: '#2C1B47',
             fontFamily: 'sans',
-            border: ' 1px solid #BF8486',
+            border: ' 1px solid #6F8486',
             borderRadius: '50px',
+            width: { xs: '80%', md: '70%' },
+            margin: '0 auto',
+            padding: '10px',
           }}
-          variant="h3"
+          variant="h6"
         >
-          Welcome to Collins Updates Center
+          Weather and Fashion API Integration Page!
         </Typography>
       </Box>
       <WeatherFashion />
