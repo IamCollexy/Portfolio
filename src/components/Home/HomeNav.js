@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -23,11 +23,13 @@ import {
   styled,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-
+import { NavItemsContext } from '../../utils/NavContext';
+import { v4 as uuidv4 } from 'uuid';
 const drawerWidth = 240;
-const navItems = ['About', 'Portfolio', 'Contact Me'];
 
-function App(props) {
+
+function Navbar(props) {
+  const navItems = useContext(NavItemsContext);
   const { window } = props;
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,13 +50,18 @@ function App(props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        
+  {navItems.map((item) => (
+    <Link key={uuidv4()}href={`#${item.id}`}>
+      <ListItem key={item} disablePadding>
+        <ListItemButton sx={{ textAlign: 'center' }}>
+          <ListItemText primary={item.label} />
+        </ListItemButton>
+      </ListItem>
+    </Link>
+  ))}
+  
+      
       </List>
     </Box>
   );
@@ -156,4 +163,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default Navbar;
