@@ -1,6 +1,6 @@
-import { Box, Card, CardContent, Stack, styled } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { PaystackButton, usePaystackPayment } from 'react-paystack';
+import { Box, Card, CardContent, Stack } from '@mui/material';
+import React, { useState } from 'react';
+import { PaystackButton } from 'react-paystack';
 
 // const PayBtnStyles = styled(PaystackButton)({
 //   root: {
@@ -36,12 +36,17 @@ const PaystackPayment = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, amount, key, name } = paymentInfo;
-    const options = {
+    const {
       email,
-      amount: amount * 100, // convert amount to kobo (Paystack's currency unit)
+      amount,
+      // key,
       name,
-    };
+    } = paymentInfo;
+    // const options = {
+    //   email,
+    //   amount: amount * 100, // convert amount to kobo (Paystack's currency unit)
+    //   name,
+    // };
     const buttonRef = e.target.firstChild;
     buttonRef.props.disabled = true; // disable button to prevent multiple payments
     setPaymentInfo({ ...paymentInfo, amount: 0 }); // clear payment information after payment

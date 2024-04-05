@@ -52,22 +52,19 @@
 
 // export default LandingPage;
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
+  // Grid,
+  // Card,
+  // CardMedia,
+  // CardContent,
   Typography,
   Box,
-  Button,
+  // Button,
 } from '@mui/material';
 
 import 'react-multi-carousel/lib/styles.css';
 import WeatherFashion from './WeatherAndFashion';
-
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 function ApiBased() {
   return (

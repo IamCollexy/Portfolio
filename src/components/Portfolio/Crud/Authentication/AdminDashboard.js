@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import PdfIcon from '@mui/icons-material/PictureAsPdf';
 import VideoIcon from '@mui/icons-material/Movie';
@@ -23,7 +23,7 @@ import {
   collection,
 } from '../../../../Config/Firebase';
 import { useNavigate } from 'react-router-dom';
-import { addDoc, updateDoc } from 'firebase/firestore';
+import { addDoc } from 'firebase/firestore';
 import { ref, uploadBytes } from 'firebase/storage';
 
 // Main Component function
@@ -99,7 +99,11 @@ const Admin = () => {
     }
   };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const {
+    getRootProps,
+    getInputProps,
+    // , isDragActive
+  } = useDropzone({
     onDrop: handleFileChange,
   });
 

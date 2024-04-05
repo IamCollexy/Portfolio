@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import {
   signInWithPopup,
   auth,
@@ -203,8 +202,8 @@ export default Login;
 //   return (
 //     <>
 
-{
-  /* <Paper
+// {
+/* <Paper
         sx={{
           display: 'flex',
           justifyContent: 'center',
@@ -297,4 +296,4 @@ export default Login;
           </Typography>
         </Paper>
       </Paper> */
-}
+// }

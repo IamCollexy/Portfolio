@@ -45,7 +45,7 @@ const UserDashboard = () => {
       }
     };
     getEvents();
-  }, []);
+  }, [eventsCollectionRef]);
   console.log(eventList);
 
   const deleteEvent = async (id) => {

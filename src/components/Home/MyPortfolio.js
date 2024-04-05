@@ -14,7 +14,6 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-
 import { Link } from 'react-router-dom';
 const data = [
   {
@@ -36,7 +35,7 @@ const data = [
 
 const CustomRightArrow = ({ onClick, ...rest }) => {
   const {
-    onMove,
+    // onMove,
     carouselState: { currentSlide, deviceType },
   } = rest;
   // onMove means if dragging or swiping in progress.
@@ -61,8 +60,10 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
 };
 const CustomLeftArrow = ({ onClick, ...rest }) => {
   const {
-    onMove,
-    carouselState: { currentSlide, deviceType },
+    // onMove,
+    carouselState: {
+      // currentSlide, deviceType
+    },
   } = rest;
   // onMove means if dragging or swiping in progress.
   return (
@@ -163,7 +164,6 @@ const MyPortfolio = () => {
           <Card
             sx={{
               py: '50px',
-              bgcolor: '',
               textAlign: 'center',
               maxWidth: { xs: 320, md: 400 },
               width: '100%',

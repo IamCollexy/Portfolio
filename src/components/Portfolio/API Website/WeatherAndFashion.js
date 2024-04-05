@@ -1,5 +1,5 @@
 import {
-  styled,
+  // styled,
   Stack,
   Box,
   Grid,
@@ -9,10 +9,7 @@ import {
 } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 // Call the OpenWeatherMap API to get the current weather information
 const apiKey = '55346314d85095238defdeee438085aa';
@@ -21,8 +18,8 @@ const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
 // console.log(fashionApiKey);
 function WeatherAndFashion() {
   const [weather, setWeather] = useState({});
-  const [fashion, setFashion] = useState([]);
-  console.log(weather);
+  // const [fashion, setFashion] = useState([]);
+
   useEffect(() => {
     function success(position) {
       const latitude = position.coords.latitude;
@@ -64,7 +61,7 @@ function WeatherAndFashion() {
           const fashion = response.data;
 
           // Update state with fashion trends
-          setFashion(fashion);
+          // setFashion(fashion);
         })
         .catch((error) => console.log(error));
     }
@@ -78,28 +75,28 @@ function WeatherAndFashion() {
   }, []);
 
   // Carorusel Responsiveness
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    sm_desktop: {
-      breakpoint: { max: 1200, min: 900 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 900, min: 464 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3,
+  //     slidesToSlide: 3, // optional, default to 1.
+  //   },
+  //   sm_desktop: {
+  //     breakpoint: { max: 1200, min: 900 },
+  //     items: 2,
+  //     slidesToSlide: 2, // optional, default to 1.
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 900, min: 464 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 1,
+  //     slidesToSlide: 1, // optional, default to 1.
+  //   },
+  // };
 
   return (
     <Box

@@ -1,12 +1,10 @@
 import {
-  IconButton,
   Box,
   Button,
   Link,
   Stack,
   Typography,
   Grid,
-  styled,
   CardMedia,
   Card,
 } from '@mui/material';
