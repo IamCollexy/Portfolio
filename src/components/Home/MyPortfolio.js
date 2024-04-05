@@ -34,10 +34,12 @@ const data = [
 ];
 
 const CustomRightArrow = ({ onClick, ...rest }) => {
-  const {
-    // onMove,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
+  // const {
+  //   // onMove,
+  //   // carouselState: {
+  //     currentSlide, deviceType,
+  //   // },
+  // } = rest;
   // onMove means if dragging or swiping in progress.
   return (
     <IconButton
@@ -59,12 +61,12 @@ const CustomRightArrow = ({ onClick, ...rest }) => {
   );
 };
 const CustomLeftArrow = ({ onClick, ...rest }) => {
-  const {
-    // onMove,
-    carouselState: {
-      // currentSlide, deviceType
-    },
-  } = rest;
+  // const {
+  //   // onMove,
+  //   carouselState: {
+  //     currentSlide, deviceType
+  //   },
+  // } = rest;
   // onMove means if dragging or swiping in progress.
   return (
     <IconButton

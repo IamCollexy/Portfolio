@@ -51,24 +51,24 @@ function WeatherAndFashion() {
         .catch((error) => console.log(error));
 
       // 2
-      const fashionUrl = `https://api.unsplash.com/photos/?client_id=${fashionApiKey}`;
+      // const fashionUrl = `https://api.unsplash.com/photos/?client_id=${fashionApiKey}`;
 
       // Get the latest fashion trends
-      axios
-        .get(fashionUrl)
-        .then((response) => {
-          // console.log(response);
-          const fashion = response.data;
+      //   axios
+      //     .get(fashionUrl)
+      //     .then((response) => {
+      //       // console.log(response);
+      //       const fashion = response.data;
 
-          // Update state with fashion trends
-          // setFashion(fashion);
-        })
-        .catch((error) => console.log(error));
+      //       // Update state with fashion trends
+      //       // setFashion(fashion);
+      //     })
+      //     .catch((error) => console.log(error));
     }
 
-    function error(error) {
-      // console.log(error);
-    }
+    // function error(error) {
+    //   // console.log(error);
+    // }
 
     // Get the user's location
     navigator.geolocation.getCurrentPosition(success, error);

@@ -36,12 +36,12 @@ const PaystackPayment = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {
-      email,
-      amount,
-      // key,
-      name,
-    } = paymentInfo;
+    // const {
+    //   email,
+    //   amount,
+    //   key,
+    //   name,
+    // } = paymentInfo;
     // const options = {
     //   email,
     //   amount: amount * 100, // convert amount to kobo (Paystack's currency unit)
