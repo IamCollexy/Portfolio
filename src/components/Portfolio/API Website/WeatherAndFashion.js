@@ -13,7 +13,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 // Call the OpenWeatherMap API to get the current weather information
 const apiKey = '55346314d85095238defdeee438085aa';
-const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
+// const fashionApiKey = '6Ctn4PsQfl6K6fpxRHi3h2cfG6LOPK521KIa_ACJXN0';
 // console.log(apiKey);
 // console.log(fashionApiKey);
 function WeatherAndFashion() {
@@ -66,9 +66,9 @@ function WeatherAndFashion() {
       //     .catch((error) => console.log(error));
     }
 
-    // function error(error) {
-    //   // console.log(error);
-    // }
+    function error(error) {
+      console.log(error);
+    }
 
     // Get the user's location
     navigator.geolocation.getCurrentPosition(success, error);
